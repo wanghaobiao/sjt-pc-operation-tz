@@ -3,7 +3,7 @@ package com.acrabsoft.web.service.sjt.pc.operation.web.taizhouRelated.dao;
 
 import com.acrabsoft.web.service.sjt.pc.operation.web.manager.controller.BaseController;
 import org.springframework.stereotype.Repository;
-import com.acrabsoft.web.service.sjt.pc.operation.web.taizhouRelated.entity.DataCollectionManagerEntity;
+import com.acrabsoft.web.service.sjt.pc.operation.web.taizhouRelated.entity.DataManagemerEntity;
 import com.acrabsoft.web.dao.base.BaseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.acrabsoft.web.service.sjt.pc.operation.web.util.JdbcTemplateUtil;
@@ -15,12 +15,12 @@ import java.util.List;
 
 
 /**
-* 数据采集管理( DataCollectionManagerDao )Dao类
+* 数据管理( DataManagemerDao )Dao类
 * @author wanghb
-* @since 2021-8-30 20:04:58
+* @since 2021-8-31 10:55:02
 */
 @Repository
-public class DataCollectionManagerDao extends BaseController {
+public class DataManagemerDao extends BaseController {
     @Autowired
     private BaseDao baseDao;
 
@@ -28,7 +28,7 @@ public class DataCollectionManagerDao extends BaseController {
     * @description  删除明细
     * @param  id  父id
     * @return  返回结果
-    * @date  2021-8-30 20:04:58
+    * @date  2021-8-31 10:55:02
     * @author  wanghb
     * @edit
     */
@@ -39,14 +39,14 @@ public class DataCollectionManagerDao extends BaseController {
     * @description  批量逻辑删除
     * @param  ids  id集合
     * @return  返回结果
-    * @date  2021-8-30 20:04:58
+    * @date  2021-8-31 10:55:02
     * @author  wanghb
     * @edit
     */
     public void batchLogicDelete(List<String> ids) {
         String userId = getBaseUser().getUserid();
         SQL sql = new SQL();
-        sql.UPDATE( DataCollectionManagerEntity.tableName );
+        sql.UPDATE( DataManagemerEntity.tableName );
         sql.SET( new StringBuilder( " deleted = '" ).append( ParamEnum.deleted.yesDel.getCode() ).append( "'" ).toString() );
         sql.SET( JdbcTemplateUtil.getOracleUpate( new Date(), userId ) );
         sql.WHERE( new StringBuilder( "id in (" ).append( JdbcTemplateUtil.toInParams( ids ) ).append( ")" ).toString() );
@@ -58,7 +58,7 @@ public class DataCollectionManagerDao extends BaseController {
     * @description  批量删除明细
     * @param  ids  父id
     * @return  返回结果
-    * @date  2021-8-30 20:04:58
+    * @date  2021-8-31 10:55:02
     * @author  wanghb
     * @edit
     */
@@ -70,7 +70,7 @@ public class DataCollectionManagerDao extends BaseController {
     * @description  批量逻辑删除明细
     * @param  ids  id集合
     * @return  返回结果
-    * @date  2021-8-30 20:04:58
+    * @date  2021-8-31 10:55:02
     * @author  wanghb
     * @edit
     */

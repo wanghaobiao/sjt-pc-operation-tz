@@ -21,7 +21,7 @@ public class UserAuditing extends BaseController implements AuditorAware<String>
             String userId = basicUser.getUserid();
             return Optional.of(userId);
         } else {
-            return Optional.empty();
+            return Optional.of("sysAdmin");
         }
     }
 }

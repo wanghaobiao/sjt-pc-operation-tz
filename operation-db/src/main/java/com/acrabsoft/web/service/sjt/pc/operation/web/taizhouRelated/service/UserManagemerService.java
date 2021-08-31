@@ -11,8 +11,8 @@ import com.acrabsoft.web.service.sjt.pc.operation.web.util.MapUtil;
 import org.acrabsoft.common.model.ResultEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.acrabsoft.web.dao.base.QueryCondition;
-import com.acrabsoft.web.service.sjt.pc.operation.web.taizhouRelated.service.DataCollectionManagerService;
-import com.acrabsoft.web.service.sjt.pc.operation.web.taizhouRelated.dao.DataCollectionManagerDao;
+import com.acrabsoft.web.service.sjt.pc.operation.web.taizhouRelated.service.UserManagemerService;
+import com.acrabsoft.web.service.sjt.pc.operation.web.taizhouRelated.dao.UserManagemerDao;
 import com.acrabsoft.web.service.sjt.pc.operation.web.taizhouRelated.entity.*;
 import org.springframework.data.jpa.domain.Specification;
 import com.acrabsoft.web.dao.base.BaseDao;
@@ -29,22 +29,22 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 /**
-* 数据采集管理( DataCollectionManagerService )服务类
+* 用户管理( UserManagemerService )服务类
 * @author wanghb
-* @since 2021-8-30 20:04:58
+* @since 2021-8-31 10:54:51
 */
 /**
-* 数据采集管理( DataCollectionManagerService )服务实现类
+* 用户管理( UserManagemerService )服务实现类
 * @author wanghb
-* @since 2021-8-30 20:04:58
+* @since 2021-8-31 10:54:51
 */
-@Service("dataCollectionManagerService")
-public class DataCollectionManagerService extends BaseController {
+@Service("userManagemerService")
+public class UserManagemerService extends BaseController {
 
     private Logger logger = LoggerFactory.getLogger( this.getClass() );
 
     @Resource
-    private DataCollectionManagerDao dataCollectionManagerDao;
+    private UserManagemerDao userManagemerDao;
     @Resource
     private JdbcTemplate jdbcTemplate;
     @Resource
@@ -66,7 +66,7 @@ public class DataCollectionManagerService extends BaseController {
         Pagination page = new Pagination(pageNo,pageSize);
         SQL sql = new SQL();
         sql.SELECT("l1.*");
-        sql.FROM(DataCollectionManagerEntity.tableName + " l1 ");
+        sql.FROM(UserManagemerEntity.tableName + " l1 ");
         sql.WHERE(new StringBuilder( " l1.deleted = '" ).append( ParamEnum.deleted.noDel.getCode() ).append( "'" ).toString());
         if (PowerUtil.isNotNull( name )) {
             sql.WHERE(new StringBuilder( " l1.createUser like '%" ).append( name ).append( "%'" ).toString());
@@ -79,7 +79,7 @@ public class DataCollectionManagerService extends BaseController {
         }
         sql.ORDER_BY( "l1.create_time desc" );
         baseDao.getPaginationByNactiveSql( sql, page);
-        List<DataCollectionManagerEntity> rows = MapUtil.toListBean( page.getRows(),DataCollectionManagerEntity.class );
+        List<UserManagemerEntity> rows = MapUtil.toListBean( page.getRows(),UserManagemerEntity.class );
         page.setRows( rows );
         return BuildResult.buildOutResult( ResultEnum.SUCCESS,page);
     }
@@ -91,16 +91,16 @@ public class DataCollectionManagerService extends BaseController {
     * @author  wanghb
     * @edit
     */
-    public List<DataCollectionManagerEntity> getAllList() {
+    public List<UserManagemerEntity> getAllList() {
         SQL sql = new SQL();
         sql.SELECT("l1.*");
-        sql.FROM(DataCollectionManagerEntity.tableName + " l1 ");
+        sql.FROM(UserManagemerEntity.tableName + " l1 ");
         sql.WHERE(new StringBuilder( " l1.deleted = '" ).append( ParamEnum.deleted.noDel.getCode() ).append( "'" ).toString());
         /*if (PowerUtil.isNotNull( name )) {
         sql.WHERE(new StringBuilder( " l1.name like '%" ).append( name ).append( "%'" ).toString());
         }*/
         sql.ORDER_BY( "l1.create_time desc" );
-        List<DataCollectionManagerEntity> rows =  MapUtil.toListBean( baseDao.getListByNactiveSql( sql ),DataCollectionManagerEntity.class );
+        List<UserManagemerEntity> rows =  MapUtil.toListBean( baseDao.getListByNactiveSql( sql ),UserManagemerEntity.class );
         return rows;
     }
 
@@ -110,15 +110,15 @@ public class DataCollectionManagerService extends BaseController {
     * @description 详情
     * @param id 主键id
     * @return 实体对象
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:54:51
     * @author wanghb
     * @edit
     */
     public Result view(String id) {
-        DataCollectionManagerEntity dataCollectionManagerEntity = this.baseDao.getById(DataCollectionManagerEntity.class, id);
-        if (dataCollectionManagerEntity != null) {
+        UserManagemerEntity userManagemerEntity = this.baseDao.getById(UserManagemerEntity.class, id);
+        if (userManagemerEntity != null) {
         }
-        return BuildResult.buildOutResult( ResultEnum.SUCCESS,dataCollectionManagerEntity);
+        return BuildResult.buildOutResult( ResultEnum.SUCCESS,userManagemerEntity);
     }
 
 
@@ -130,36 +130,36 @@ public class DataCollectionManagerService extends BaseController {
     * @author wanghb
     * @edit
     */
-    public DataCollectionManagerEntity getOne(String code) {
+    public UserManagemerEntity getOne(String code) {
         List<QueryCondition> queryConditions = new ArrayList<>();
         queryConditions.add(new QueryCondition("deleted", ParamEnum.deleted.noDel.getCode()));
         if (PowerUtil.isNotNull( code )) {
             queryConditions.add( new QueryCondition("code", code));
         }
-        List<DataCollectionManagerEntity> list = baseDao.get(DataCollectionManagerEntity.class, queryConditions);
+        List<UserManagemerEntity> list = baseDao.get(UserManagemerEntity.class, queryConditions);
         return list.size() > 0 ? list.get( 0 ) : null;
     }
 
     /**
     * @description 保存或更新
-    * @param dataCollectionManagerEntity 实体
+    * @param userManagemerEntity 实体
     * @return 无返回值
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:54:51
     * @author wanghb
     * @edit
     */
     @Transactional(rollbackOn = Exception.class)
-    public Result saveOrUpdate(DataCollectionManagerEntity dataCollectionManagerEntity) {
-        String id = dataCollectionManagerEntity.getId();
+    public Result saveOrUpdate(UserManagemerEntity userManagemerEntity) {
+        String id = userManagemerEntity.getId();
         Date nowDate = new Date();
         if (PowerUtil.isNull( id )) {
             id = CodeUtils.getUUID32();
-            MapUtil.setCreateBean( dataCollectionManagerEntity, id, nowDate );
+            MapUtil.setCreateBean( userManagemerEntity, id, nowDate );
         } else {
-            MapUtil.setUpdateBean( dataCollectionManagerEntity, nowDate );
+            MapUtil.setUpdateBean( userManagemerEntity, nowDate );
         }
-        this.baseDao.update( dataCollectionManagerEntity );
-        this.dataCollectionManagerDao.deleteDetail( id );
+        this.baseDao.update( userManagemerEntity );
+        this.userManagemerDao.deleteDetail( id );
         return BuildResult.buildOutResult( ResultEnum.SUCCESS );
     }
 
@@ -167,27 +167,27 @@ public class DataCollectionManagerService extends BaseController {
     /**
     * @description  去保存页面
     * @return  返回结果
-    * @date  2021-8-30 20:04:58
+    * @date  2021-8-31 10:54:51
     * @author  wanghb
     * @edit
     */
     public Result goSave() {
-        DataCollectionManagerEntity dataCollectionManagerEntity = new DataCollectionManagerEntity();
-        return BuildResult.buildOutResult( ResultEnum.SUCCESS,dataCollectionManagerEntity);
+        UserManagemerEntity userManagemerEntity = new UserManagemerEntity();
+        return BuildResult.buildOutResult( ResultEnum.SUCCESS,userManagemerEntity);
     }
 
 
     /**
     * @description 保存
-    * @param dataCollectionManagerEntity 实体
+    * @param userManagemerEntity 实体
     * @return 无返回值
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:54:51
     * @author wanghb
     * @edit
     */
     @Transactional(rollbackOn = Exception.class)
-    public Result save(DataCollectionManagerEntity dataCollectionManagerEntity) {
-        Result result = saveOrUpdate( dataCollectionManagerEntity );
+    public Result save(UserManagemerEntity userManagemerEntity) {
+        Result result = saveOrUpdate( userManagemerEntity );
         return result;
     }
 
@@ -196,14 +196,14 @@ public class DataCollectionManagerService extends BaseController {
     * @description 删除
     * @param id 主键id
     * @return 实体对象
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:54:51
     * @author wanghb
     * @edit
     */
     @Transactional(rollbackOn = Exception.class)
     public Result delete(String id) {
-        this.baseDao.delete(DataCollectionManagerEntity.class, id);
-        this.dataCollectionManagerDao.deleteDetail( id );
+        this.baseDao.delete(UserManagemerEntity.class, id);
+        this.userManagemerDao.deleteDetail( id );
         return BuildResult.buildOutResult( ResultEnum.SUCCESS );
     }
 
@@ -212,14 +212,14 @@ public class DataCollectionManagerService extends BaseController {
     * @description 批量删除
     * @param ids 主键ids
     * @return 实体对象
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:54:51
     * @author wanghb
     * @edit
     */
     @Transactional(rollbackOn = Exception.class)
     public Result batchDelete(List<String> ids) {
-        this.baseDao.delete(DataCollectionManagerEntity.class, ids.toArray());
-        this.dataCollectionManagerDao.batchDeleteDetail( ids );
+        this.baseDao.delete(UserManagemerEntity.class, ids.toArray());
+        this.userManagemerDao.batchDeleteDetail( ids );
         return BuildResult.buildOutResult( ResultEnum.SUCCESS );
     }
 
@@ -228,18 +228,18 @@ public class DataCollectionManagerService extends BaseController {
     * @description 逻辑删除
     * @param id 主键id
     * @return 实体对象
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:54:51
     * @author wanghb
     * @edit
     */
     @Transactional(rollbackOn = Exception.class)
     public Result logicDelete(String id) {
-        DataCollectionManagerEntity dataCollectionManagerEntity = this.baseDao.getById(DataCollectionManagerEntity.class, id);
-        if (dataCollectionManagerEntity != null) {
+        UserManagemerEntity userManagemerEntity = this.baseDao.getById(UserManagemerEntity.class, id);
+        if (userManagemerEntity != null) {
             Date nowDate = new Date();
-            dataCollectionManagerEntity.setDeleted( ParamEnum.deleted.yesDel.getCode() );
-            MapUtil.setUpdateBean( dataCollectionManagerEntity, nowDate );
-            this.baseDao.update( dataCollectionManagerEntity );
+            userManagemerEntity.setDeleted( ParamEnum.deleted.yesDel.getCode() );
+            MapUtil.setUpdateBean( userManagemerEntity, nowDate );
+            this.baseDao.update( userManagemerEntity );
         }
         return BuildResult.buildOutResult( ResultEnum.SUCCESS );
     }
@@ -249,14 +249,14 @@ public class DataCollectionManagerService extends BaseController {
     * @description 批量逻辑删除
     * @param ids 主键ids
     * @return 实体对象
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:54:51
     * @author wanghb
     * @edit
     */
     @Transactional(rollbackOn = Exception.class)
     public Result batchLogicDelete(List<String> ids) {
-        this.dataCollectionManagerDao.batchLogicDelete(ids);
-        this.dataCollectionManagerDao.batchLogicDeleteDetail(ids);
+        this.userManagemerDao.batchLogicDelete(ids);
+        this.userManagemerDao.batchLogicDeleteDetail(ids);
         return BuildResult.buildOutResult( ResultEnum.SUCCESS );
     }
 
@@ -280,7 +280,7 @@ public class DataCollectionManagerService extends BaseController {
         /*if (PowerUtil.isNotNull(  )) {
             queryConditions.add(new QueryCondition("", ));
         }*/
-        Integer count = baseDao.getCount( DataCollectionManagerEntity.class, queryConditions);
+        Integer count = baseDao.getCount( UserManagemerEntity.class, queryConditions);
         return count;
     }
 

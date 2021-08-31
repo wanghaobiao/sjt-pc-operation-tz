@@ -1,6 +1,6 @@
 package com.acrabsoft.web.service.sjt.pc.operation.web.taizhouRelated.controller;
 
-import com.acrabsoft.web.service.sjt.pc.operation.web.taizhouRelated.service.DataCollectionManagerService;
+import com.acrabsoft.web.service.sjt.pc.operation.web.taizhouRelated.service.DataManagemerService;
 import com.acrabsoft.web.service.sjt.pc.operation.web.taizhouRelated.entity.*;
 import org.acrabsoft.common.model.Result;
 import org.acrabsoft.common.model.ResultEnum;
@@ -16,22 +16,22 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
-* 数据采集管理( DataCollectionManagerController )控制类
+* 数据管理( DataManagemerController )控制类
 * @author wanghbdeptName
-* @since 2021-8-30 20:04:58
+* @since 2021-8-31 10:55:02
 */
 @RestController
-@RequestMapping("/taizhouRelated/dataCollectionManager")
-@Api(value = "数据采集管理",  tags = "数据采集管理")
-public class DataCollectionManagerController {
+@RequestMapping("/taizhouRelated/dataManagemer")
+@Api(value = "数据管理",  tags = "数据管理")
+public class DataManagemerController {
 
-    private static Logger logger = Logger.getLogger( DataCollectionManagerController.class );
+    private static Logger logger = Logger.getLogger( DataManagemerController.class );
 
     /**
     * 服务对象
     */
     @Resource
-    private DataCollectionManagerService dataCollectionManagerService;
+    private DataManagemerService dataManagemerService;
 
 
     /**
@@ -51,7 +51,7 @@ public class DataCollectionManagerController {
                               @RequestParam(defaultValue = "") @ApiParam("名称") String name,
                               @RequestParam(defaultValue = "") @ApiParam("开始时间") String startDate,
                               @RequestParam(defaultValue = "") @ApiParam("结束时间") String endDate) {
-        Result result = dataCollectionManagerService.getListPage( pageNo,pageSize,name,startDate,endDate);
+        Result result = dataManagemerService.getListPage( pageNo,pageSize,name,startDate,endDate);
         return result;
     }
 
@@ -60,7 +60,7 @@ public class DataCollectionManagerController {
     * @description 详情
     * @param id 主键id
     * @return 实体对象
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:55:02
     * @author wanghb
     * @edit
     */
@@ -68,24 +68,24 @@ public class DataCollectionManagerController {
     @ResponseBody
     @ApiOperation(value = "详情")
     public Result view(@RequestParam(name = "id", required =false) @ApiParam("主键id") String id) {
-        Result result = dataCollectionManagerService.view( id );
+        Result result = dataManagemerService.view( id );
         return result;
     }
 
 
     /**
     * @description 保存或更新
-    * @param dataCollectionManagerEntity 实体
+    * @param dataManagemerEntity 实体
     * @return 无返回值
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:55:02
     * @author wanghb
     * @edit
     */
     @PostMapping("/saveOrUpdate")
     @ResponseBody
     @ApiOperation(value = "保存或更新")
-    public Result saveOrUpdate(@RequestBody DataCollectionManagerEntity dataCollectionManagerEntity) {
-        Result result = dataCollectionManagerService.saveOrUpdate( dataCollectionManagerEntity );
+    public Result saveOrUpdate(@RequestBody DataManagemerEntity dataManagemerEntity) {
+        Result result = dataManagemerService.saveOrUpdate( dataManagemerEntity );
         return result;
     }
 
@@ -94,7 +94,7 @@ public class DataCollectionManagerController {
     /**
     * @description 去保存页面
     * @return 实体对象
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:55:02
     * @author wanghb
     * @edit
     */
@@ -102,24 +102,24 @@ public class DataCollectionManagerController {
     @ResponseBody
     @ApiOperation(value = "详情")
     public Result goSave() {
-        Result result = dataCollectionManagerService.goSave(  );
+        Result result = dataManagemerService.goSave(  );
         return result;
     }
 
 
     /**
     * @description 保存
-    * @param dataCollectionManagerEntity 实体
+    * @param dataManagemerEntity 实体
     * @return 无返回值
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:55:02
     * @author wanghb
     * @edit
     */
     @PostMapping("/save")
     @ResponseBody
     @ApiOperation(value = "保存")
-    public Result save(@RequestBody DataCollectionManagerEntity dataCollectionManagerEntity) {
-        Result result = dataCollectionManagerService.save( dataCollectionManagerEntity );
+    public Result save(@RequestBody DataManagemerEntity dataManagemerEntity) {
+        Result result = dataManagemerService.save( dataManagemerEntity );
         return result;
     }
 
@@ -128,7 +128,7 @@ public class DataCollectionManagerController {
     * @description 删除
     * @param id 主键id
     * @return 实体对象
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:55:02
     * @author wanghb
     * @edit
     */
@@ -136,7 +136,7 @@ public class DataCollectionManagerController {
     @ResponseBody
     @ApiOperation(value = "删除")
     public Result delete(@RequestParam(name = "id", required =false) @ApiParam("主键id") String id) {
-        Result result = dataCollectionManagerService.delete( id );
+        Result result = dataManagemerService.delete( id );
         return result;
     }
 
@@ -145,7 +145,7 @@ public class DataCollectionManagerController {
     * @description 批量删除
     * @param ids 主键id
     * @return 实体对象
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:55:02
     * @author wanghb
     * @edit
     */
@@ -153,7 +153,7 @@ public class DataCollectionManagerController {
     @ResponseBody
     @ApiOperation(value = "批量删除")
     public Result batchDelete(@RequestBody List<String> ids) {
-        Result result = dataCollectionManagerService.batchDelete( ids );
+        Result result = dataManagemerService.batchDelete( ids );
         return result;
     }*/
 
@@ -162,7 +162,7 @@ public class DataCollectionManagerController {
     * @description 逻辑删除
     * @param id 主键id
     * @return 实体对象
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:55:02
     * @author wanghb
     * @edit
     */
@@ -170,7 +170,7 @@ public class DataCollectionManagerController {
     @ResponseBody
     @ApiOperation(value = "逻辑删除")
     public Result logicDelete(@RequestParam(name = "id", required =false) @ApiParam("主键id") String id) {
-        Result result = dataCollectionManagerService.logicDelete( id );
+        Result result = dataManagemerService.logicDelete( id );
         return result;
     }*/
 
@@ -179,7 +179,7 @@ public class DataCollectionManagerController {
     * @description 批量逻辑删除
     * @param ids 主键id
     * @return 实体对象
-    * @date 2021-8-30 20:04:58
+    * @date 2021-8-31 10:55:02
     * @author wanghb
     * @edit
     */
@@ -187,7 +187,7 @@ public class DataCollectionManagerController {
     @ResponseBody
     @ApiOperation(value = "批量删除")
     public Result batchLogicDelete(@RequestBody List<String> ids) {
-        Result result = dataCollectionManagerService.batchLogicDelete( ids );
+        Result result = dataManagemerService.batchLogicDelete( ids );
         return result;
     }*/
 
