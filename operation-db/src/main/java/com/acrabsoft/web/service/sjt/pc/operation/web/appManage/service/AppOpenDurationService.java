@@ -1,0 +1,306 @@
+package com.acrabsoft.web.service.sjt.pc.operation.web.appManage.service;
+
+import com.acrabsoft.web.dao.base.SQL;
+import com.acrabsoft.web.service.sjt.pc.operation.web.manager.controller.BaseController;
+import com.acrabsoft.web.service.sjt.pc.operation.web.manager.utils.CodeUtils;
+import com.acrabsoft.web.service.sjt.pc.operation.web.util.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.acrabsoft.common.model.ResultEnum;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.acrabsoft.web.dao.base.QueryCondition;
+import com.acrabsoft.web.service.sjt.pc.operation.web.appManage.service.AppOpenDurationService;
+import com.acrabsoft.web.service.sjt.pc.operation.web.appManage.dao.AppOpenDurationDao;
+import com.acrabsoft.web.service.sjt.pc.operation.web.appManage.entity.*;
+import org.springframework.data.jpa.domain.Specification;
+import com.acrabsoft.web.dao.base.BaseDao;
+import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
+import javax.persistence.criteria.*;
+import javax.transaction.Transactional;
+import org.acrabsoft.common.BuildResult;
+import java.util.*;
+import org.acrabsoft.common.model.Pagination;
+import org.acrabsoft.common.model.Result;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+
+/**
+* 应用每日人员使用时长( AppOpenDurationService )服务类
+* @author wanghb
+* @since 2021-8-26 15:21:37
+*/
+/**
+* 应用每日人员使用时长( AppOpenDurationService )服务实现类
+* @author wanghb
+* @since 2021-8-26 15:21:37
+*/
+@Service("appOpenDurationService")
+public class AppOpenDurationService extends BaseController {
+
+    private Logger logger = LoggerFactory.getLogger( this.getClass() );
+
+    @Resource
+    private AppOpenDurationDao appOpenDurationDao;
+    @Resource
+    private JdbcTemplate jdbcTemplate;
+    @Resource
+    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+
+    @Resource
+    private BaseDao baseDao;
+
+    /**
+    * @description  分页查询
+    * @param  pageNo  一页个数
+    * @param  pageSize  页码
+    * @return  返回结果
+    * @date  20/09/05 8:13
+    * @author  wanghb
+    * @edit
+    */
+    public Result getListPage(int pageNo, int pageSize,String name,String startDate,String endDate) {
+        Pagination page = new Pagination(pageNo,pageSize);
+        SQL sql = new SQL();
+        sql.SELECT("l1.*");
+        sql.FROM(AppOpenDurationEntity.tableName + " l1 ");
+        sql.WHERE(new StringBuilder( " l1.deleted = '" ).append( ParamEnum.deleted.noDel.getCode() ).append( "'" ).toString());
+        if (PowerUtil.isNotNull( name )) {
+            sql.WHERE(new StringBuilder( " l1.createUser like '%" ).append( name ).append( "%'" ).toString());
+        }
+        if (PowerUtil.isNotNull( startDate )){
+            sql.WHERE( " l1.create_time >= "+ JdbcTemplateUtil.getOracelToDate( startDate ));
+        }
+        if (PowerUtil.isNotNull( endDate )){
+            sql.WHERE( " l1.create_time <= "+JdbcTemplateUtil.getOracelToDate( endDate ));
+        }
+        sql.ORDER_BY( "l1.create_time desc" );
+        baseDao.getPaginationByNactiveSql( sql, page);
+        List<AppOpenDurationEntity> rows = MapUtil.toListBean( page.getRows(),AppOpenDurationEntity.class );
+        page.setRows( rows );
+        return BuildResult.buildOutResult( ResultEnum.SUCCESS,page);
+    }
+
+    /**
+    * @description  获取全部
+    * @return  返回结果
+    * @date  20/09/05 8:13
+    * @author  wanghb
+    * @edit
+    */
+    public List<AppOpenDurationEntity> getAllList() {
+        SQL sql = new SQL();
+        sql.SELECT("l1.*");
+        sql.FROM(AppOpenDurationEntity.tableName + " l1 ");
+        sql.WHERE(new StringBuilder( " l1.deleted = '" ).append( ParamEnum.deleted.noDel.getCode() ).append( "'" ).toString());
+        /*if (PowerUtil.isNotNull( name )) {
+        sql.WHERE(new StringBuilder( " l1.name like '%" ).append( name ).append( "%'" ).toString());
+        }*/
+        sql.ORDER_BY( "l1.create_time desc" );
+        List<AppOpenDurationEntity> rows =  MapUtil.toListBean( baseDao.getListByNactiveSql( sql ),AppOpenDurationEntity.class );
+        return rows;
+    }
+
+
+
+    /**
+    * @description 详情
+    * @param id 主键id
+    * @return 实体对象
+    * @date 2021-8-26 15:21:37
+    * @author wanghb
+    * @edit
+    */
+    public Result view(String id) {
+        AppOpenDurationEntity appOpenDurationEntity = this.baseDao.getById(AppOpenDurationEntity.class, id);
+        if (appOpenDurationEntity != null) {
+        }
+        return BuildResult.buildOutResult( ResultEnum.SUCCESS,appOpenDurationEntity);
+    }
+
+
+    /**
+    * @description 获取唯一
+    * @param code
+    * @return 实体对象
+    * @date 2020-12-29 11:06:43
+    * @author wanghb
+    * @edit
+    */
+    public AppOpenDurationEntity getOne(String code) {
+        List<QueryCondition> queryConditions = new ArrayList<>();
+        queryConditions.add(new QueryCondition("deleted", ParamEnum.deleted.noDel.getCode()));
+        if (PowerUtil.isNotNull( code )) {
+            queryConditions.add( new QueryCondition("code", code));
+        }
+        List<AppOpenDurationEntity> list = baseDao.get(AppOpenDurationEntity.class, queryConditions);
+        return list.size() > 0 ? list.get( 0 ) : null;
+    }
+
+    /**
+    * @description 保存或更新
+    * @param appOpenDurationEntity 实体
+    * @return 无返回值
+    * @date 2021-8-26 15:21:37
+    * @author wanghb
+    * @edit
+    */
+    @Transactional(rollbackOn = Exception.class)
+    public Result saveOrUpdate(AppOpenDurationEntity appOpenDurationEntity) {
+        String id = appOpenDurationEntity.getId();
+        Date nowDate = new Date();
+        if (PowerUtil.isNull( id )) {
+            id = CodeUtils.getUUID32();
+            MapUtil.setCreateBean( appOpenDurationEntity, id, nowDate );
+        } else {
+            MapUtil.setUpdateBean( appOpenDurationEntity, nowDate );
+        }
+        this.baseDao.update( appOpenDurationEntity );
+        this.appOpenDurationDao.deleteDetail( id );
+        return BuildResult.buildOutResult( ResultEnum.SUCCESS );
+    }
+
+    /**
+     * @description  批量保存
+     * @param  list
+     * @return  返回结果
+     * @date  2021-8-26 15:24
+     * @author  wanghb
+     * @edit
+     */
+    @Transactional(rollbackOn = Exception.class)
+    public Result batchSave(List<Map<String, Object>> list) {
+        List<AppOpenDurationEntity> appOpenDurationEntitys = MapUtil.toListBean( list,AppOpenDurationEntity.class );
+        Date nowDate = new Date();
+        for (int i = 0; i < appOpenDurationEntitys.size(); i++) {
+            AppOpenDurationEntity appOpenDurationEntity = appOpenDurationEntitys.get( i );
+            appOpenDurationEntity.setPersonCode( PowerUtil.getString( list.get( i ).get( "personNum" ) ) );
+            MapUtil.setCreateBean( appOpenDurationEntity, CodeUtils.getUUID32(), nowDate );
+        }
+        namedParameterJdbcTemplate.batchUpdate( AppOpenDurationEntity.insertSql,JdbcTemplateUtil.ListBeanPropSource( appOpenDurationEntitys ) );
+        return BuildResult.buildOutResult( ResultEnum.SUCCESS);
+    }
+
+
+    /**
+    * @description  去保存页面
+    * @return  返回结果
+    * @date  2021-8-26 15:21:37
+    * @author  wanghb
+    * @edit
+    */
+    public Result goSave() {
+        AppOpenDurationEntity appOpenDurationEntity = new AppOpenDurationEntity();
+        return BuildResult.buildOutResult( ResultEnum.SUCCESS,appOpenDurationEntity);
+    }
+
+
+    /**
+    * @description 保存
+    * @param appOpenDurationEntity 实体
+    * @return 无返回值
+    * @date 2021-8-26 15:21:37
+    * @author wanghb
+    * @edit
+    */
+    @Transactional(rollbackOn = Exception.class)
+    public Result save(AppOpenDurationEntity appOpenDurationEntity) {
+        Result result = saveOrUpdate( appOpenDurationEntity );
+        return result;
+    }
+
+
+    /**
+    * @description 删除
+    * @param id 主键id
+    * @return 实体对象
+    * @date 2021-8-26 15:21:37
+    * @author wanghb
+    * @edit
+    */
+    @Transactional(rollbackOn = Exception.class)
+    public Result delete(String id) {
+        this.baseDao.delete(AppOpenDurationEntity.class, id);
+        this.appOpenDurationDao.deleteDetail( id );
+        return BuildResult.buildOutResult( ResultEnum.SUCCESS );
+    }
+
+
+    /**
+    * @description 批量删除
+    * @param ids 主键ids
+    * @return 实体对象
+    * @date 2021-8-26 15:21:37
+    * @author wanghb
+    * @edit
+    */
+    @Transactional(rollbackOn = Exception.class)
+    public Result batchDelete(List<String> ids) {
+        this.baseDao.delete(AppOpenDurationEntity.class, ids.toArray());
+        this.appOpenDurationDao.batchDeleteDetail( ids );
+        return BuildResult.buildOutResult( ResultEnum.SUCCESS );
+    }
+
+
+    /**
+    * @description 逻辑删除
+    * @param id 主键id
+    * @return 实体对象
+    * @date 2021-8-26 15:21:37
+    * @author wanghb
+    * @edit
+    */
+    @Transactional(rollbackOn = Exception.class)
+    public Result logicDelete(String id) {
+        AppOpenDurationEntity appOpenDurationEntity = this.baseDao.getById(AppOpenDurationEntity.class, id);
+        if (appOpenDurationEntity != null) {
+            Date nowDate = new Date();
+            appOpenDurationEntity.setDeleted( ParamEnum.deleted.yesDel.getCode() );
+            MapUtil.setUpdateBean( appOpenDurationEntity, nowDate );
+            this.baseDao.update( appOpenDurationEntity );
+        }
+        return BuildResult.buildOutResult( ResultEnum.SUCCESS );
+    }
+
+
+    /**
+    * @description 批量逻辑删除
+    * @param ids 主键ids
+    * @return 实体对象
+    * @date 2021-8-26 15:21:37
+    * @author wanghb
+    * @edit
+    */
+    @Transactional(rollbackOn = Exception.class)
+    public Result batchLogicDelete(List<String> ids) {
+        this.appOpenDurationDao.batchLogicDelete(ids);
+        this.appOpenDurationDao.batchLogicDeleteDetail(ids);
+        return BuildResult.buildOutResult( ResultEnum.SUCCESS );
+    }
+
+
+
+
+    /**
+    * @description  根据条件查询数量
+    * @param  id  id
+    * @return  查询数据
+    * @date  2020-10-29 14:29
+    * @author  wanghb
+    * @edit
+    */
+    public Integer getCount(String id) {
+        List<QueryCondition> queryConditions = new ArrayList<>();
+        queryConditions.add(new QueryCondition("deleted", ParamEnum.deleted.noDel.getCode()));
+        if (PowerUtil.isNotNull( id )) {
+            queryConditions.add(new QueryCondition("id",QueryCondition.NOEQ, id));
+        }
+        /*if (PowerUtil.isNotNull(  )) {
+            queryConditions.add(new QueryCondition("", ));
+        }*/
+        Integer count = baseDao.getCount( AppOpenDurationEntity.class, queryConditions);
+        return count;
+    }
+
+
+}

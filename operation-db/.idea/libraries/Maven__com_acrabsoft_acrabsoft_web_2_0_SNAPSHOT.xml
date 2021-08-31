@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.acrabsoft:acrabsoft-web:2.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/acrabsoft/acrabsoft-web/2.0-SNAPSHOT/acrabsoft-web-2.0-20210617.060842-35.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/acrabsoft/acrabsoft-web/2.0-SNAPSHOT/acrabsoft-web-2.0-20210617.060842-35-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/acrabsoft/acrabsoft-web/2.0-SNAPSHOT/acrabsoft-web-2.0-20210617.060842-35-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

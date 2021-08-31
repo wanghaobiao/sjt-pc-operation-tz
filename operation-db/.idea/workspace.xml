@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="029519b3-313e-4e39-b10c-55eb25ddee10" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/security" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/security/interceptor" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/security/interceptor/AuthorizeInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sjt-pc-operation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sjt-pc-operation.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/StartApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/StartApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/controller/AppInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/controller/AppInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/controller/ServiceInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/controller/ServiceInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/entity/AppInfoEntityAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/entity/AppInfoEntityAbstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/entity/ServiceInfoEntityAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/entity/ServiceInfoEntityAbstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/AppInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/AppInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/AppLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/AppLogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/HBaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/HBaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/ServiceInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/ServiceInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/ServiceLogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/ServiceLogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/kafka/controller/KafkaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/kafka/controller/KafkaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/kafka/service/KafkaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/kafka/service/KafkaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/system/controller/HbaseRowkeyMarkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/system/controller/HbaseRowkeyMarkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/system/service/HbaseRowkeyMarkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/system/service/HbaseRowkeyMarkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/system/service/TaskRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/system/service/TaskRecordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/util/ParamEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/util/ParamEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/util/ScheduledTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/util/ScheduledTasks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/util/config/MysqlDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/util/config/MysqlDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/util/kafkaHuawei/HuaweiKafkaConsumerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/util/kafkaHuawei/HuaweiKafkaConsumerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/util/kafkaHuawei/KafkaMsgSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/util/kafkaHuawei/KafkaMsgSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/util/kafkaHuawei/kafkaMsgReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/util/kafkaHuawei/kafkaMsgReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prd.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prd.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hbaseConf" beforeDir="true" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="AUTO_SHOW_ERRORS_IN_EDITOR" value="false" />
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="JRebelWorkspace">
+    <option name="jrebelEnabledAutocompile" value="true" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="D:\Program Files\apache-maven-3.8.1\conf\settings.xml" />
+        <option name="workOffline" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1qSahvfx07xcinOvHoFkBWtyVnF" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="ToolWindowBuild.ShowToolbar" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dynamic.classpath" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../VsCodeSpace_Zx/sjt-pc-html" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.56436783" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="MavenRunHelper" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IdeaSpace_ZxMy\sjt-pc-operation\lib\hbase" />
+      <recent name="E:\IdeaSpace_ZxMy\sjt-pc-operation\src\main\resources" />
+      <recent name="E:\IdeaSpace_ZxMy\sjt-pc-operation\src\main\java\com\acrabsoft\web\service\sjt\pc\operation\web\util\HbaseHuawei" />
+      <recent name="E:\IdeaSpace_ZxMy\sjt-pc-operation\lib" />
+      <recent name="E:\IdeaSpace_ZxMy\sjt-pc-operation\src\main\resources\kafka" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IdeaSpace_ZxMy\sjt-pc-operation\lib\kafka" />
+      <recent name="E:\IdeaSpace_ZxMy\sjt-pc-operation\src\main\resources" />
+      <recent name="E:\IdeaSpace_ZxMy\sjt-pc-operation" />
+      <recent name="E:\IdeaSpace_ZxMy\sjt-pc-operation\src\main" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.acrabsoft.web.security.interceptor" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.acrabsoft.web.security.interceptor" />
+      <recent name="com.acrabsoft.web" />
+      <recent name="com.acrabsoft.web.service.sjt.pc.operation.web.util.HbaseHuawei" />
+      <recent name="com.acrabsoft.web.service.sjt.pc.operation.web.kafka.service" />
+      <recent name="com.acrabsoft.web.service.sjt.pc.operation.web.util" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn install:install-file -Dfile=J:\app\Administrator\product\11.2.0\dbhome_2\jdbc\lib\ojdbc6.jar -DgroupId=com.server -DartifactId=ojdbc6 -Dversion=6 -Dpackaging=Jar   " />
+      <command value="mvn install:install-file -Dfile=J:\app\Administrator\product\11.2.0\dbhome_2\jdbc\lib\ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=6 -Dpackaging=Jar    " />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.移动运营平台(后端)">
+    <configuration name="AppLogController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.acrabsoft.web.service.sjt.pc.operation.web.appManage.controller.AppLogController" />
+      <module name="sjt-pc-operation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.acrabsoft.web.service.sjt.pc.operation.web.appManage.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="sjt-pc-operation" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="移动运营平台(后端)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="sjt-pc-operation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.acrabsoft.web.service.sjt.pc.operation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acrabsoft.web.service.sjt.pc.operation.StartApp" />
+      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev -Dserver.port=1007 " />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="MANIFEST" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.移动运营平台(后端)" />
+      <item itemvalue="Application.AppLogController" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.移动运营平台(后端)" />
+        <item itemvalue="Application.AppLogController" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\IdeaSpace_ZxMy\sjt-pc-operation" />
+          <option name="myCopyRoot" value="E:\IdeaSpace_ZxMy\sjt-pc-operation" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="E:\IdeaSpace_ZxMy\sjt-pc-operation" />
+          <option name="myCopyRoot" value="E:\IdeaSpace_ZxMy\sjt-pc-operation" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="029519b3-313e-4e39-b10c-55eb25ddee10" name="Default Changelist" comment="" />
+      <created>1617075567587</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617075567587</updated>
+      <workItem from="1617075569013" duration="8126000" />
+      <workItem from="1617089385865" duration="4175000" />
+      <workItem from="1617264049990" duration="2661000" />
+      <workItem from="1617268991192" duration="865000" />
+      <workItem from="1617327626313" duration="16803000" />
+      <workItem from="1617697930074" duration="958000" />
+      <workItem from="1617762784733" duration="13010000" />
+      <workItem from="1617844054797" duration="258000" />
+      <workItem from="1617844750809" duration="86000" />
+      <workItem from="1617845910321" duration="59000" />
+      <workItem from="1617875561866" duration="2506000" />
+      <workItem from="1617929857267" duration="237000" />
+      <workItem from="1617933846979" duration="14734000" />
+      <workItem from="1618190136794" duration="24235000" />
+      <workItem from="1618275696775" duration="9448000" />
+      <workItem from="1618294130059" duration="38000" />
+      <workItem from="1618296924825" duration="13000" />
+      <workItem from="1618363262432" duration="2788000" />
+      <workItem from="1618394039354" duration="94000" />
+      <workItem from="1618399035461" duration="11000" />
+      <workItem from="1618449808870" duration="44000" />
+      <workItem from="1618449868746" duration="3134000" />
+      <workItem from="1618453333353" duration="60000" />
+      <workItem from="1618453413531" duration="2299000" />
+      <workItem from="1618455920510" duration="7368000" />
+      <workItem from="1618471805014" duration="5379000" />
+      <workItem from="1618481550616" duration="352000" />
+      <workItem from="1618482715119" duration="1291000" />
+      <workItem from="1618535168890" duration="24818000" />
+      <workItem from="1618614348798" duration="18000" />
+      <workItem from="1618626375270" duration="553000" />
+      <workItem from="1618794145076" duration="19308000" />
+      <workItem from="1618826407051" duration="1361000" />
+      <workItem from="1618880568898" duration="208000" />
+      <workItem from="1618880792922" duration="20336000" />
+      <workItem from="1618914943581" duration="155000" />
+      <workItem from="1618915118431" duration="170000" />
+      <workItem from="1618915320646" duration="93000" />
+      <workItem from="1618915585970" duration="1807000" />
+      <workItem from="1618966943578" duration="225000" />
+      <workItem from="1618971217294" duration="19070000" />
+      <workItem from="1619001215956" duration="3392000" />
+      <workItem from="1619052738975" duration="10596000" />
+      <workItem from="1619072455476" duration="4923000" />
+      <workItem from="1619084258573" duration="891000" />
+      <workItem from="1619142052423" duration="1866000" />
+      <workItem from="1619144023904" duration="744000" />
+      <workItem from="1619144784116" duration="683000" />
+      <workItem from="1619145563695" duration="15568000" />
+      <workItem from="1619312438378" duration="640000" />
+      <workItem from="1619313120138" duration="2718000" />
+      <workItem from="1619316999400" duration="14163000" />
+      <workItem from="1619345496539" duration="452000" />
+      <workItem from="1619346029068" duration="3061000" />
+      <workItem from="1619399218072" duration="7719000" />
+      <workItem from="1619406982411" duration="16537000" />
+      <workItem from="1619484967334" duration="24864000" />
+      <workItem from="1619571216311" duration="28139000" />
+      <workItem from="1619614056021" duration="1061000" />
+      <workItem from="1619658207660" duration="21675000" />
+      <workItem from="1619744662158" duration="6620000" />
+      <workItem from="1620263895957" duration="439000" />
+      <workItem from="1620264584492" duration="7892000" />
+      <workItem from="1620296194808" duration="1002000" />
+      <workItem from="1620470855298" duration="676000" />
+      <workItem from="1620608452763" duration="1101000" />
+      <workItem from="1620800613511" duration="7927000" />
+      <workItem from="1620867885389" duration="4075000" />
+      <workItem from="1620873799025" duration="16837000" />
+      <workItem from="1620956644161" duration="4047000" />
+      <workItem from="1621085741383" duration="44000" />
+      <workItem from="1621214871116" duration="31000" />
+      <workItem from="1621223549350" duration="653000" />
+      <workItem from="1621326046754" duration="7000" />
+      <workItem from="1621501577632" duration="1271000" />
+      <workItem from="1621563114628" duration="423000" />
+      <workItem from="1621582961468" duration="5100000" />
+      <workItem from="1621820018665" duration="3484000" />
+      <workItem from="1621927086466" duration="229000" />
+      <workItem from="1621936955879" duration="92000" />
+      <workItem from="1621943930876" duration="2000" />
+      <workItem from="1621943948188" duration="50000" />
+      <workItem from="1622617896732" duration="146000" />
+      <workItem from="1622618099840" duration="633000" />
+      <workItem from="1622632638781" duration="1688000" />
+      <workItem from="1622634492181" duration="206000" />
+      <workItem from="1622681820916" duration="415000" />
+      <workItem from="1622682718010" duration="20000" />
+      <workItem from="1622682947169" duration="77000" />
+      <workItem from="1622683106456" duration="357000" />
+      <workItem from="1622683569565" duration="2584000" />
+      <workItem from="1622686494488" duration="895000" />
+      <workItem from="1622687405465" duration="2796000" />
+      <workItem from="1622700497483" duration="91000" />
+      <workItem from="1622700608630" duration="244000" />
+      <workItem from="1622700973540" duration="7947000" />
+      <workItem from="1622711777973" duration="141000" />
+      <workItem from="1622712137350" duration="5614000" />
+      <workItem from="1622768652545" duration="5042000" />
+      <workItem from="1622793346470" duration="3192000" />
+      <workItem from="1623208133191" duration="3055000" />
+      <workItem from="1623230940030" duration="3376000" />
+      <workItem from="1623814734271" duration="3013000" />
+      <workItem from="1623824606307" duration="117000" />
+      <workItem from="1623824745815" duration="50000" />
+      <workItem from="1623826269482" duration="1325000" />
+      <workItem from="1623827633303" duration="2607000" />
+      <workItem from="1623830280691" duration="373000" />
+      <workItem from="1623914543576" duration="690000" />
+      <workItem from="1623925307034" duration="61000" />
+      <workItem from="1623926626674" duration="615000" />
+      <workItem from="1623927289961" duration="136000" />
+      <workItem from="1623927989366" duration="770000" />
+      <workItem from="1623929323014" duration="483000" />
+      <workItem from="1623930111695" duration="830000" />
+      <workItem from="1623979356797" duration="1338000" />
+      <workItem from="1623982912937" duration="2225000" />
+      <workItem from="1623985469598" duration="2918000" />
+      <workItem from="1623999087682" duration="2065000" />
+      <workItem from="1624003766132" duration="1605000" />
+      <workItem from="1624241821217" duration="1885000" />
+      <workItem from="1624267986745" duration="3608000" />
+      <workItem from="1624324192054" duration="1528000" />
+      <workItem from="1624345743151" duration="18995000" />
+      <workItem from="1624412849033" duration="4726000" />
+      <workItem from="1624419083205" duration="6748000" />
+      <workItem from="1624460106075" duration="598000" />
+      <workItem from="1624496792430" duration="18165000" />
+      <workItem from="1624529938930" duration="2593000" />
+      <workItem from="1624583896977" duration="2174000" />
+      <workItem from="1624611926886" duration="68000" />
+      <workItem from="1624695787122" duration="745000" />
+      <workItem from="1624699519862" duration="5385000" />
+      <workItem from="1624705536535" duration="1970000" />
+      <workItem from="1624842823714" duration="1287000" />
+      <workItem from="1624932096397" duration="3367000" />
+      <workItem from="1624953487292" duration="3213000" />
+      <workItem from="1624970788629" duration="21000" />
+      <workItem from="1624970834573" duration="869000" />
+      <workItem from="1624975373246" duration="768000" />
+      <workItem from="1625017464823" duration="7238000" />
+      <workItem from="1625050551679" duration="781000" />
+      <workItem from="1625127788317" duration="8745000" />
+      <workItem from="1625205653324" duration="14000000" />
+      <workItem from="1625278667749" duration="2152000" />
+      <workItem from="1625281249482" duration="13782000" />
+      <workItem from="1625302872925" duration="11737000" />
+      <workItem from="1625447367723" duration="18551000" />
+      <workItem from="1625489130830" duration="680000" />
+      <workItem from="1625489914769" duration="671000" />
+      <workItem from="1625533585775" duration="17396000" />
+      <workItem from="1625559736272" duration="13588000" />
+      <workItem from="1625575993305" duration="5802000" />
+      <workItem from="1625619997531" duration="321000" />
+      <workItem from="1625653280098" duration="3087000" />
+      <workItem from="1625656802813" duration="11548000" />
+      <workItem from="1625706617997" duration="38040000" />
+      <workItem from="1625793453763" duration="392000" />
+      <workItem from="1625793863677" duration="469000" />
+      <workItem from="1625795064431" duration="240000" />
+      <workItem from="1625798573060" duration="13200000" />
+      <workItem from="1625882462526" duration="5159000" />
+      <workItem from="1625899281123" duration="11787000" />
+      <workItem from="1626053364819" duration="34012000" />
+    </task>
+    <task id="LOCAL-00001" summary="tj">
+      <created>1617086295073</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617086295073</updated>
+    </task>
+    <task id="LOCAL-00002" summary="代码提交">
+      <created>1617269112407</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1617269112408</updated>
+    </task>
+    <task id="LOCAL-00003" summary="代码提交">
+      <created>1617959579037</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1617959579037</updated>
+    </task>
+    <task id="LOCAL-00004" summary="代码提交">
+      <created>1618567654309</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618567654309</updated>
+    </task>
+    <task id="LOCAL-00005" summary="代码提交">
+      <created>1618829209854</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618829209854</updated>
+    </task>
+    <task id="LOCAL-00006" summary="代码提交">
+      <created>1618994456976</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618994456976</updated>
+    </task>
+    <task id="LOCAL-00007" summary="代码提交">
+      <created>1619004613070</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1619004613070</updated>
+    </task>
+    <task id="LOCAL-00008" summary="代码提交">
+      <created>1619053503841</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1619053503841</updated>
+    </task>
+    <task id="LOCAL-00009" summary="代码提交">
+      <created>1619077169585</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1619077169585</updated>
+    </task>
+    <task id="LOCAL-00010" summary="代码提交">
+      <created>1619142099226</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1619142099226</updated>
+    </task>
+    <task id="LOCAL-00011" summary="pom.xml  代码提交一波">
+      <created>1619144937984</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1619144937984</updated>
+    </task>
+    <task id="LOCAL-00012" summary="代码提交">
+      <created>1619417710739</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1619417710739</updated>
+    </task>
+    <task id="LOCAL-00013" summary="代码提交">
+      <created>1619516263398</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1619516263398</updated>
+    </task>
+    <task id="LOCAL-00014" summary="代码提交">
+      <created>1619753349342</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1619753349342</updated>
+    </task>
+    <task id="LOCAL-00015" summary="代码提交">
+      <created>1620267201564</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1620267201564</updated>
+    </task>
+    <task id="LOCAL-00016" summary="代码提交">
+      <created>1620899322697</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1620899322697</updated>
+    </task>
+    <task id="LOCAL-00017" summary="代码提交">
+      <created>1622687434175</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1622687434175</updated>
+    </task>
+    <task id="LOCAL-00018" summary="代码提交">
+      <created>1622687462373</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1622687462373</updated>
+    </task>
+    <task id="LOCAL-00019" summary="代码提交">
+      <created>1622719314248</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1622719314248</updated>
+    </task>
+    <task id="LOCAL-00020" summary="代码提交">
+      <created>1623823600099</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1623823600099</updated>
+    </task>
+    <task id="LOCAL-00021" summary="代码提交">
+      <created>1624527637262</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1624527637262</updated>
+    </task>
+    <task id="LOCAL-00022" summary="代码提交">
+      <created>1624707426739</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1624707426739</updated>
+    </task>
+    <task id="LOCAL-00023" summary="代码提交">
+      <created>1625130766587</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1625130766587</updated>
+    </task>
+    <task id="LOCAL-00024" summary="配置多数据源">
+      <created>1625213021322</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1625213021322</updated>
+    </task>
+    <task id="LOCAL-00025" summary="配置多数据源">
+      <created>1625213689487</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1625213689487</updated>
+    </task>
+    <task id="LOCAL-00026" summary="配置多数据源">
+      <created>1625213969634</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1625213969634</updated>
+    </task>
+    <task id="LOCAL-00027" summary="集成华为kafka">
+      <created>1625299166781</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1625299166781</updated>
+    </task>
+    <task id="LOCAL-00028" summary="配置多数据源">
+      <created>1625299335890</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1625299335890</updated>
+    </task>
+    <task id="LOCAL-00029" summary="集成华为kafka">
+      <created>1625304620105</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1625304620105</updated>
+    </task>
+    <task id="LOCAL-00030" summary="集成华为kafka">
+      <created>1625309085964</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1625309085964</updated>
+    </task>
+    <task id="LOCAL-00031" summary="集成华为kafka">
+      <created>1625541790457</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1625541790457</updated>
+    </task>
+    <task id="LOCAL-00032" summary="集成hbase">
+      <created>1625566155018</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1625566155018</updated>
+    </task>
+    <task id="LOCAL-00033" summary="代码提交">
+      <created>1625658206212</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1625658206212</updated>
+    </task>
+    <task id="LOCAL-00034" summary="这一版  kafka 正常使用">
+      <created>1625709265167</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1625709265167</updated>
+    </task>
+    <task id="LOCAL-00035" summary="代码优化">
+      <created>1625729625666</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1625729625666</updated>
+    </task>
+    <task id="LOCAL-00036" summary="kafka 配置内外网环境">
+      <created>1625748928226</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1625748928226</updated>
+    </task>
+    <task id="LOCAL-00037" summary="代码提交">
+      <created>1625800762980</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1625800762980</updated>
+    </task>
+    <task id="LOCAL-00038" summary="kafka hbase 集成版">
+      <created>1625884439409</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1625884439409</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="tj" />
+    <MESSAGE value="pom.xml  代码提交一波" />
+    <MESSAGE value="集成华为kafaka" />
+    <MESSAGE value="配置多数据源" />
+    <MESSAGE value="集成华为kafka" />
+    <MESSAGE value="集成hbase" />
+    <MESSAGE value="这一版  kafka 正常使用" />
+    <MESSAGE value="代码优化" />
+    <MESSAGE value="kafka 配置内外网环境" />
+    <MESSAGE value="代码提交" />
+    <MESSAGE value="kafka hbase 集成版" />
+    <option name="LAST_COMMIT_MESSAGE" value="kafka hbase 集成版" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.24/fastjson-1.2.24.jar!/com/alibaba/fastjson/JSON.class</url>
+          <line>584</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/system/entity/TaskRecordEntity.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/lib/kafka/kafka-clients-0.10.0.0.jar!/org/apache/kafka/common/security/kerberos/KerberosLogin.class</url>
+          <line>233</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/AppLogService.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/AppLogService.java</url>
+          <line>157</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/ServiceLogService.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/ServiceLogService.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/acrabsoft/web/service/sjt/pc/operation/web/appManage/service/ServiceLogService.java</url>
+          <line>115</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="javax.security.auth.login.AppConfigurationEntry" memberName="controlFlag" />
+        <PinnedItemInfo parentTag="javax.security.auth.login.AppConfigurationEntry" memberName="loginModuleName" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>

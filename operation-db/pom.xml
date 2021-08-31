@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--<parent>
+        <groupId>com.acrabsoft.web.service</groupId>
+        <artifactId>sjt-pc</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>-->
+    <parent>
+        <artifactId>acrabsoft-frame</artifactId>
+        <groupId>com.acrabsoft</groupId>
+        <version>2.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>operation-db</artifactId>
+    <packaging>jar</packaging>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <!--<dependency>
+            <groupId>com.acrabsoft.web.service</groupId>
+            <artifactId>sjt-pc-base</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.acrabsoft.web.service</groupId>
+            <artifactId>sjt-pc-startup</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>-->
+        <dependency>
+            <groupId>com.acrabsoft</groupId>
+            <artifactId>acrabsoft-web</artifactId>
+            <version>2.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.acrabsoft</groupId>
+            <artifactId>acrabsoft-web-security</artifactId>
+            <version>2.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.acrabsoft</groupId>
+            <artifactId>acrabsoft-web-fileserver</artifactId>
+            <version>2.0.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.oracle</groupId>
+                    <artifactId>ojdbc6</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>2.0.0.RELEASE</version>
+            <scope>test</scope>
+        </dependency>-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.11_preview_9</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>3.16</version>
+        </dependency>
+        <!--<dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>2.1.10.RELEASE</version>
+        </dependency>-->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka.clients</artifactId>
+            <version>0.10.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/kafka/kafka-clients-0.10.0.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka.kafka</artifactId>
+            <version>2.10-0.10.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/kafka/kafka_2.10-0.10.0.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>metrics.core</artifactId>
+            <version>2.2.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/kafka/metrics-core-2.2.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.htrace</groupId>
+            <artifactId>htrace-core</artifactId>
+            <version>3.1.0-incubating</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>org.zookeeper</artifactId>
+            <version>3.5.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/kafka/zookeeper-3.5.1.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>scala.library</artifactId>
+            <version>2.10.6</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/kafka/scala-library-2.10.6.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>org.zkclient</artifactId>
+            <version>0.8</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/kafka/zkclient-0.8.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop.hbase</groupId>
+            <artifactId>huawei-hbase-common</artifactId>
+            <version>1.0.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-hbase-common-1.0.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>huawei-hadoop-hdfs</artifactId>
+            <version>2.7.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-hadoop-hdfs-2.7.2.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>huawei-hadoop-hdfs-client</artifactId>
+            <version>2.7.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-hadoop-hdfs-client-2.7.2.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>huawei-hadoop-common</artifactId>
+            <version>2.7.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-hadoop-common-2.7.2.jar</systemPath>
+        </dependency>
+
+        <!-- 解决guava冲突，单独打包的 -->
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>huawei-hbase-client-with-guava</artifactId>
+            <version>1.0.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-hbase-client-with-guava-1.0.2.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>huawei-hadoop-auth</artifactId>
+            <version>2.7.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-hadoop-auth-2.7.2.jar</systemPath>
+
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>huawei-hadoop-mapreduce-client-core</artifactId>
+            <version>2.7.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-hadoop-mapreduce-client-core-2.7.2.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>huawei-httpmime</artifactId>
+            <version>4.3.6</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-httpmime-4.3.6.jar</systemPath>
+        </dependency>
+
+        <!--<dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>huawei-solr-solrj</artifactId>
+            <version>5.3.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-solr-solrj-5.3.1.jar</systemPath>
+        </dependency>-->
+
+        <dependency>
+            <groupId>org.apache.luna</groupId>
+            <artifactId>huawei-luna</artifactId>
+            <version>0.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-luna-0.1.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.phoenix</groupId>
+            <artifactId>huawei-phoenix-core</artifactId>
+            <version>4.4.0-HBase-1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-phoenix-core-4.4.0-HBase-1.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>huawei-hbase-protocol</artifactId>
+            <version>1.0.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-hbase-protocol-1.0.2.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>huawei-hbase-server</artifactId>
+            <version>1.0.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-hbase-server-1.0.2.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop.hbase</groupId>
+            <artifactId>huawei-hbaseFileStream</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-hbaseFileStream-1.0.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop.hbase.index</groupId>
+            <artifactId>huawei-hbase-secondaryindex</artifactId>
+            <version>1.0.2</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-hbase-secondaryindex-1.0.2.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>com.huawei.hadoop.dynalogger</groupId>
+            <artifactId>dynalogger</artifactId>
+            <version>V100R002C30</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/dynalogger-V100R002C30.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-hadoop-hbase</artifactId>
+            <version>2.2.0.RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>zookeeper</artifactId>
+                    <groupId>org.apache.zookeeper</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>huawei-zookeeper</artifactId>
+            <version>3.5.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/hbase/huawei-zookeeper-3.5.1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j</artifactId>
+            <version>1.3.8.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.lingala.zip4j</groupId>
+            <artifactId>zip4j</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.22</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.protobuf</groupId>
+                    <artifactId>protobuf-java</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+    </dependencies>
+
+
+    <repositories>
+        <repository>
+            <id>acrabsoft</id>
+            <name>acrabsoft</name>
+            <url>http://t.acrabsoft.com:8081/repository/maven-public/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <!-- 配置编译的JDK版本及编码 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF8</encoding>
+                </configuration>
+            </plugin>
+            <!-- 方法一：打完整jar包开始 -->
+            <!--<plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <includeSystemScope>true</includeSystemScope>
+                    <fork>true</fork>
+                    <jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>-->
+            <!-- 方法一：打完整jar包结束 -->
+
+            <!-- 方法二：打分离jar包开始 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/lib</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib</classpathPrefix>
+                            <mainClass>com.acrabsoft.web.service.sjt.pc.operation.StartApp</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <!-- 方法二：打分离jar包结束 -->
+        </plugins>
+    </build>
+</project>

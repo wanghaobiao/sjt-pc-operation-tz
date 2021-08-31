@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.acrabsoft:acrabsoft-license:2.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/acrabsoft/acrabsoft-license/2.0-SNAPSHOT/acrabsoft-license-2.0-20210617.060834-27.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/acrabsoft/acrabsoft-license/2.0-SNAPSHOT/acrabsoft-license-2.0-20210617.060834-27-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/acrabsoft/acrabsoft-license/2.0-SNAPSHOT/acrabsoft-license-2.0-20210617.060834-27-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
